@@ -8,6 +8,10 @@ app.use(cors());
 const httpServer  =createServer(app);
 
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Chat Backend API is running!', status: 'ok' });
+});
+
 //WebSocket Server
 const io = new Server(httpServer, {
     cors: {
